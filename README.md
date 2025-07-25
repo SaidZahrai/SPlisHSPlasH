@@ -2,10 +2,13 @@
 
 I could easily build SPlisHSPlash on Ubuntu with cmake version 3.31.4, but I had problems on Windows with cmake 4.0.0-rc4. I could lower my cmake version, but I decided the other way and tried to make small updates in the CMakeLists.txt for this and subprojects, which all are forked from the original versions without removing the references.
 
-To run this update version follow these steps:
+To run this update version follow the below steps.
+
+### 1. Debug build
+If you want to debug features, follow these steps, but the execution will be slow.
 
 ```bash
-git clone https://github.com/SaidZahrai/SPlisHSPlasH.git```
+git clone https://github.com/SaidZahrai/SPlisHSPlasH.git
 cd SPlisHSPlasH
 cmake -G "Visual Studio 17 2022" -A x64 -B build -S .  # This creates Visual Studio project for VS 2022.
 ```
@@ -18,9 +21,35 @@ At this point you have 2 choices. If you have Visual Studio installed, you can V
 ```shell
 cmake --build build
 ```
-This should build the solution.
+This should build the solution with debug configuration.
 
-I have tested on Windows 11 with Developer Power Shell for VS 2022 and WSL2/Ubuntu 22.04 gcc 11.4.0. The solution builds correctly, but on windows the `imgui` has some issues and consumes 100% of CPU, so it basically blocks eversthing, even when there is nothing ongoing
+### 2. Release build
+If you want to see things moving, you need to build without the debug stuff. In the above steps, use the following commands on Windows:
+
+```bash
+cmake -G "Visual Studio 17 2022" -A x64 -DCMAKE_BUILD_TYPE=Release -S . -B build
+```
+```bash
+cmake --build build --config Release
+```
+
+and on Linux
+
+```bash
+cmake -DCMAKE_BUILD_TYPE=Release -S . -B build
+```
+For default makefiles and
+
+```bash
+cmake -G "Ninja" -DCMAKE_BUILD_TYPE=Release -S . -B build
+```
+for ninja if it is installed, followed by:
+```bash
+cmake --build build --config Release
+```
+
+
+I have tested on Windows 11 with Developer Power Shell for VS 2022 and WSL2/Ubuntu 22.04 gcc 11.4.0. The solution builds correctly, but on windows, in the debug configuration `imgui` consumes 100% of CPU, so it basically blocks eversthing, even when there is nothing ongoing.
 
 ---
 Here, the original README.md:
