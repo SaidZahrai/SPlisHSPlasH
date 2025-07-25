@@ -14,7 +14,8 @@ ExternalProject_Add(
 	Ext_Discregrid
 	PREFIX "${CMAKE_BINARY_DIR}/extern/Discregrid"
 	GIT_REPOSITORY https://github.com/SaidZahrai/Discregrid.git
-	GIT_TAG "0b69062ff9c56fbb6dcecd296652028bedbacf0e"
+	# GIT_TAG "0b69062ff9c56fbb6dcecd296652028bedbacf0e"
+	GIT_TAG "f784af3a5cb095a1435317c01836fabb90078dbf"
 	INSTALL_DIR ${ExternalInstallDir}/Discregrid
 	CMAKE_ARGS -DCMAKE_BUILD_TYPE:STRING=${EXT_CMAKE_BUILD_TYPE} -DCMAKE_INSTALL_PREFIX:PATH=${ExternalInstallDir}/Discregrid -DBUILD_CMD_EXECUTABLE:BOOL=0 -DEIGEN3_INCLUDE_DIR:PATH=${EIGEN3_INCLUDE_DIR} -DCMAKE_CXX_FLAGS=${CMAKE_CXX_FLAGS}
 )
@@ -33,7 +34,8 @@ ExternalProject_Add(
 	Ext_GenericParameters
 	PREFIX "${CMAKE_BINARY_DIR}/extern/GenericParameters"
 	GIT_REPOSITORY https://github.com/SaidZahrai/GenericParameters.git
-	GIT_TAG "a4e2744eea526270cfe38b826440d09f66473316"
+	# GIT_TAG "a4e2744eea526270cfe38b826440d09f66473316"
+	GIT_TAG "080774df585dbfda8c88bb7ad2e2d791ac3a1f43"
 	INSTALL_DIR ${ExternalInstallDir}/GenericParameters
 	CMAKE_ARGS -DCMAKE_BUILD_TYPE=${EXT_CMAKE_BUILD_TYPE} -DCMAKE_INSTALL_PREFIX:PATH=${ExternalInstallDir}/GenericParameters -DGENERICPARAMETERS_NO_TESTS:BOOL=1 -DCMAKE_CXX_FLAGS=${CMAKE_CXX_FLAGS}
 )
@@ -47,7 +49,8 @@ ExternalProject_Add(
 	Ext_PBD
 	PREFIX "${CMAKE_BINARY_DIR}/extern/PositionBasedDynamics"
 	GIT_REPOSITORY https://github.com/SaidZahrai/PositionBasedDynamics.git
-	GIT_TAG "00db2e091a88a628099787cf6fada941e851dbfa"
+	# GIT_TAG "00db2e091a88a628099787cf6fada941e851dbfa"
+	GIT_TAG "e887fe28773215c7abfdea1af16b7fa21ccd8dc2"
 	INSTALL_DIR ${ExternalInstallDir}/PositionBasedDynamics
 	DEPENDS Ext_GenericParameters Ext_Discregrid
 	CMAKE_ARGS -DCMAKE_BUILD_TYPE=${EXT_CMAKE_BUILD_TYPE}

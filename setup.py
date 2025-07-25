@@ -132,7 +132,7 @@ setup(
     description='SPlisHSPlasH Project Python Bindings',
     long_description=long_description,
     long_description_content_type='text/markdown',
-    url='https://github.com/InteractiveComputerGraphics/SPlisHSPlasH',
+    url='https://github.com/SaidZahrai/SPlisHSPlasH',
     license="MIT",
     keywords="sph fluids sph-fluids smoothed-particle-hydrodynamics fluid-simulation fluid-dynamics multiphase-flow viscous-fluids deformable-solids simulation",
     ext_modules=[CMakeExtension(name)],
