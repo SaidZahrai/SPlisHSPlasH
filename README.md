@@ -1,3 +1,32 @@
+## Why this fork
+
+I could easily build SPlisHSPlash on Ubuntu with cmake version 3.31.4, but I had problems on Windows with cmake 4.0.0-rc4. I could lower my cmake version, but I decided the other way and tried to make small updates in the CMakeLists.txt for this and subprojects, which all are forked from the original versions without removing the references.
+
+To run this update version follow these steps:
+
+```bash
+git clone https://github.com/SaidZahrai/SPlisHSPlasH.git```
+cd SPlisHSPlasH
+cmake -G "Visual Studio 17 2022" -A x64 -B build -S .  # This creates Visual Studio project for VS 2022.
+```
+or this one for VS 2019:
+```bash
+cmake -G "Visual Studio 16 2019" -A x64 -B build -S .  # This creates Visual Studio project for VS 2019.
+```
+
+At this point you have 2 choices. If you have Visual Studio installed, you can Visual Studio, open the solution and build the solution. Otherwise, you can open the Developer Power Shell for VS 20xx, or  Developer Command Prompt for VS 20xx, go to the repository folder and then 
+```shell
+cmake --build build
+```
+This should build the solution.
+
+I have tested on Windows 11 with Developer Power Shell for VS 2022 and WSL2/Ubuntu 22.04 gcc 11.4.0. The solution builds correctly, but on windows the `imgui` has some issues and consumes 100% of CPU, so it basically blocks eversthing, even when there is nothing ongoing
+
+---
+Here, the original README.md:
+---
+
+
 <img src="https://raw.githubusercontent.com/InteractiveComputerGraphics/SPlisHSPlasH/master/doc/images/logo.jpg" width="250">
 <br>
 
